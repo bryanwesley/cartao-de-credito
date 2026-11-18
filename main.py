@@ -5,6 +5,8 @@ try:
     print(f"Suas dívidas são: {divida}")
     print(f"Seu saldo final é: {saldo - divida}")
     transacao = int(input("Digite quanto você quer transferir: "))
+    if transacao < 0:
+        raise ValueError ("a transferência não pode ser negativa")
     saldo -= transacao
     if saldo < 0:
         divida = abs(saldo)
